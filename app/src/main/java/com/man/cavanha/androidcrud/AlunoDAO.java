@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +35,10 @@ public class AlunoDAO {
             String nome = cursor.getString(cursor.getColumnIndex("Nome"));
             String nota = cursor.getString(cursor.getColumnIndex("Nota"));
             alunos.add(new Aluno(id, nome, nota));
-
+/*
             //MUDANDO A COR DAS BOLAS!
+            //View v = findViewById(R.id.ballred);
+            //v.setVisibility(View.VISIBLE);
             if (Integer.parseInt(nota)<6){
                 R.id.ballblack.setVisibility(View.INVISIBLE);
                 R.id.ballred.setVisibility(View.VISIBLE);
@@ -45,7 +49,7 @@ public class AlunoDAO {
                 R.id.ballred.setVisibility(View.INVISIBLE);
                 R.id.ballblue.setVisibility(View.VISIBLE);
             }
-
+*/
         }
         cursor.close();
         return alunos;
