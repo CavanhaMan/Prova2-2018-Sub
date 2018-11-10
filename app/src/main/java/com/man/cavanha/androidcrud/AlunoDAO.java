@@ -4,9 +4,6 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.ImageView;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/ballblack"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:srcCompat="@drawable/ballblack"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="2dp"
@@ -41,8 +41,8 @@
 
     <ImageView
         android:id="@+id/ballblue"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:srcCompat="@drawable/ballblue"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="2dp"
@@ -50,8 +50,8 @@
 
     <ImageView
         android:id="@+id/ballred"
-        android:layout_width="80"
-        android:layout_height="80"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         app:srcCompat="@drawable/ballred"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="2dp"
