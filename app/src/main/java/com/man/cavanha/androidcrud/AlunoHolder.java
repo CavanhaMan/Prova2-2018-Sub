@@ -5,15 +5,17 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class ClienteHolder extends RecyclerView.ViewHolder {
+public class AlunoHolder extends RecyclerView.ViewHolder {
 
-    public TextView nomeCliente;
+    public TextView nomeAluno;
+    public TextView notaAluno;
     public ImageButton btnEditar;
     public ImageButton btnExcluir;
 
-    public ClienteHolder(View itemView) {
+    public AlunoHolder(View itemView) {
         super(itemView);
-        nomeCliente = (TextView) itemView.findViewById(R.id.nomeCliente);
+        nomeAluno = (TextView) itemView.findViewById(R.id.nomeAluno);
+        notaAluno = (TextView) itemView.findViewById(R.id.notaAluno);
         btnEditar = (ImageButton) itemView.findViewById(R.id.btnEdit);
         btnExcluir = (ImageButton) itemView.findViewById(R.id.btnDelete);
     }

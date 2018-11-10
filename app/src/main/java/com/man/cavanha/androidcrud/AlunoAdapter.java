@@ -6,33 +6,34 @@ import android.view.ViewGroup;
 import java.util.List;
 
 
-public class ClienteAdapter extends RecyclerView.Adapter<ClienteHolder> {
+public class AlunoAdapter extends RecyclerView.Adapter<AlunoHolder> {
 
-    private final List<Cliente> clientes;
+    private final List<Aluno> alunos;
 
-    public ClienteAdapter(List<Cliente> clientes) {
-        this.clientes = clientes;
+    public AlunoAdapter(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 
     @Override
-    public ClienteHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new ClienteHolder(LayoutInflater.from(parent.getContext())
+    public AlunoHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new AlunoHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_lista, parent, false));
     }
 
     @Override
-    public void onBindViewHolder(ClienteHolder holder, int position) {
-        holder.nomeCliente.setText(clientes.get(position).getNome());
+    public void onBindViewHolder(AlunoHolder holder, int position) {
+        holder.nomeAluno.setText(alunos.get(position).getNome());
+        holder.notaAluno.setText(alunos.get(position).getNota());
     }
 
     @Override
     public int getItemCount() {
-        return clientes != null ? clientes.size() : 0;
+        return alunos != null ? alunos.size() : 0;
     }
 
-    public void adicionarCliente(Cliente cliente){
-        clientes.add(cliente);
+    public void adicionarAluno(Aluno aluno){
+        alunos.add(aluno);
         notifyItemInserted(getItemCount());
     }
-    /*adiciona o cliente na coleção in-memory e notifica a RecyclerView que ela deve se atualizar*/
+    /*adiciona o aluno na coleção in-memory e notifica a RecyclerView que ela deve se atualizar*/
 }

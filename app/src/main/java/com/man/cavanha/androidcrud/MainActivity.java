@@ -12,10 +12,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,28 +47,22 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //carregando os campos
                 EditText txtNome = (EditText)findViewById(R.id.txtNome);
-                Spinner spnEstado = (Spinner)findViewById(R.id.spnEstado);
-                RadioGroup rgSexo = (RadioGroup)findViewById(R.id.rgSexo);
-                CheckBox chkVip = (CheckBox)findViewById(R.id.chkVip);
+                EditText txtNota = (EditText)findViewById(R.id.txtNota);
 
                 //pegando os valores
                 String nome = txtNome.getText().toString();
-                String uf = spnEstado.getSelectedItem().toString();
-                boolean vip = chkVip.isChecked();
-                String sexo = rgSexo.getCheckedRadioButtonId() == R.id.rbMasculino ? "M" : "F";
+                String nota = txtNota.getText().toString();
 
                 //salvando os dados
-                ClienteDAO dao = new ClienteDAO(getBaseContext());
-                boolean sucesso = dao.salvar(nome, sexo, uf, vip);
+                AlunoDAO dao = new AlunoDAO(getBaseContext());
+                boolean sucesso = dao.salvar(nome, nota);
                 if(sucesso) {
-                    Cliente cliente = dao.retornarUltimo();
-                    adapter.adicionarCliente(cliente);
+                    Aluno aluno = dao.retornarUltimo();
+                    adapter.adicionarAluno(aluno);
 
                     //limpa os campos
                     txtNome.setText("");
-                    rgSexo.setSelected(false);
-                    spnEstado.setSelection(0);
-                    chkVip.setChecked(false);
+                    txtNota.setText("");
 
                     Snackbar.make(view, "Salvou!", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
@@ -88,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         configurarRecycler();
         /*chame esse configurarRecycler() no final do onCreate da MainActivity.java,
           para que ele seja disparado e popule inicialmente a RecyclerView
-          com a lista de clientes do banco.*/
+          com a lista de alunos do banco.*/
     }
 
     @Override
@@ -114,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     RecyclerView recyclerView;
-    ClienteAdapter adapter;
+    AlunoAdapter adapter;
 
     private void configurarRecycler() {
         // Configurando o gerenciador de layout para ser uma lista.
@@ -123,8 +114,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         // Adiciona o adapter que irá anexar os objetos à lista.
-        ClienteDAO dao = new ClienteDAO(this);
-        adapter = new ClienteAdapter(dao.retornarTodos());
+        AlunoDAO dao = new AlunoDAO(this);
+        adapter = new AlunoAdapter(dao.retornarTodos());
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }

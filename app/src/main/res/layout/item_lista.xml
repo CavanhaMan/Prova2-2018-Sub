@@ -6,37 +6,35 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/cornota"
+        android:layout_width="101dp"
+        android:layout_height="97dp"
+        app:srcCompat="@drawable/ballblack" />
+
     <TextView
-        android:layout_height="wrap_content"
+        android:id="@+id/nomeAluno"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="Nome do aluno"
         android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
-        android:id="@+id/nomeCliente"
-        android:text="Nome do cliente"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@+id/btnEdit"
-        android:layout_marginRight="8dp" />
+        app:layout_constraintStart_toEndOf="@+id/cornota"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
+    <TextView
+        android:id="@+id/notaAluno"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/btnEdit"
-        android:src="@android:drawable/ic_menu_edit"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintRight_toLeftOf="@+id/btnDelete"
-        android:layout_marginRight="8dp" />
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="32dp"
+        android:text="00"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/nomeAluno"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/btnDelete"
-        android:src="@android:drawable/ic_delete"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
 
 </android.support.constraint.ConstraintLayout>

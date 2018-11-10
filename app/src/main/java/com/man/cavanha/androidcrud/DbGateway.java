@@ -23,10 +23,3 @@ public class DbGateway {
         return this.db;
     }
 }
-/*
-Nesse DbGateway eu também usei o Design Pattern Singleton
-para garantir que exista apenas um cliente de banco de dados
-único paratodo o meu app, uma vez que o SQLite não trabalha
-muito bem com concorrência e porque múltiplas conexões
-poderiam consumir recursos demais.
-*/
