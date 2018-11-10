@@ -16,7 +16,5 @@ public class AlunoHolder extends RecyclerView.ViewHolder {
         super(itemView);
         nomeAluno = (TextView) itemView.findViewById(R.id.nomeAluno);
         notaAluno = (TextView) itemView.findViewById(R.id.notaAluno);
-        btnEditar = (ImageButton) itemView.findViewById(R.id.btnEdit);
-        btnExcluir = (ImageButton) itemView.findViewById(R.id.btnDelete);
     }
 }
